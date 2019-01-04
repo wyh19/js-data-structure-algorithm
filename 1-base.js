@@ -18,8 +18,15 @@ numbers.pop()
 numbers.shift()
 
 console.log(numbers)
+
+
 /**
  * splice
  * 在任意位置添加或删除元素
- *
  */
+//删除索引5开始的3个元素
+numbers.splice(5,3)
+console.log(numbers)
+//添加 索引5开始插入3个元素
+numbers.splice(5,0,2,3,4)
+console.log(numbers)
