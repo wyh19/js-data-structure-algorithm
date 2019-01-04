@@ -37,3 +37,8 @@ console.log(result)
 for(let n of numbers){
     console.log(n)
 }
+
+//@@iterator
+let it = numbers[Symbol.iterator]()
+console.log(it.next().value)
+
