@@ -48,3 +48,10 @@ console.log(stack.peek()); //输出8
 stack.push(11);
 console.log(stack.size()); //输出3 
 console.log(stack.isEmpty()); //输出false
+
+stack.push(15); //栈底到栈顶依次为5，8，11，15
+
+stack.pop();
+stack.pop(); 
+console.log(stack.size()); //输出2 
+stack.print(); //输出5, 8
