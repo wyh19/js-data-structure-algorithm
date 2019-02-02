@@ -5,17 +5,19 @@ var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 //push 尾部插入
 numbers.push(11)
+//依次插入多个
 numbers.push(12, 13)
 
 //unshift 头部插入
 numbers.unshift(-2)
+//依次插入多个
 numbers.unshift(-4, -3)
 
-//pop 尾部删除
-numbers.pop()
+//pop 尾部删除,并返回该值
+var a = numbers.pop()
 
-//shift 头部删除
-numbers.shift()
+//shift 头部删除,并返回该值
+var b = numbers.shift()
 
 console.log(numbers)
 
