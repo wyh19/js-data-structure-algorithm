@@ -1,6 +1,7 @@
 //定义一个栈类
 function Stack() {
     //栈的数据结构依然是数组
+    //之所以使用内部变量，而不是使用this.items，是为了隐蔽栈的数组本质，只暴露栈这种数据结构特有的方法
     let items = []
 
     //压栈
@@ -32,7 +33,7 @@ function Stack() {
         items = []
     }
     this.print = function () {
-        console.log(items.toString())
+        console.log(items)
     }
 }
 
