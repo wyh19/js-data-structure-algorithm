@@ -9,6 +9,7 @@ function PriorityQueue() {
     this.enqueue = function (element, priority) {
         let queueElement = new QueueElement(element, priority);
         let added = false;
+        //队列越前面优先级越高，因此一旦判断新元素优先级更高，则立马插入并终止循环
         for (let i = 0; i < items.length; i++) {
             //如果优先级高，则在其前面添加
             if (queueElement.priority < items[i].priority) { 
