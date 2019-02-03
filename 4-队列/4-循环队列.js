@@ -31,9 +31,11 @@ function hotPotato(nameList, num) {
     }
     let eliminated = '';
     while (queue.size() > 1) {
+        //循环队列内部元素
         for (let i = 0; i < num; i++) {
             queue.enqueue(queue.dequeue()); 
         }
+        //循环结束，抛出一个，认为是被淘汰者
         eliminated = queue.dequeue();
         console.log(eliminated + '在击鼓传花游戏中被淘汰。');
     }
