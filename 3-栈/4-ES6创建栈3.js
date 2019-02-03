@@ -22,3 +22,5 @@ let Stack = (function () {
 let s1 = new Stack()
 console.log(s1)
 //以上实现了栈的数据封装
+
+//下面几节将使用栈解决具体问题
