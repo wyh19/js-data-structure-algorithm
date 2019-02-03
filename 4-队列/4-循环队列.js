@@ -35,7 +35,9 @@ function hotPotato(nameList, num) {
             queue.enqueue(queue.dequeue()); 
         }
         eliminated = queue.dequeue();
+        console.log(eliminated + '在击鼓传花游戏中被淘汰。');
     }
+    //最后获胜者
     return queue.dequeue();
 }
 let names = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl']; 
