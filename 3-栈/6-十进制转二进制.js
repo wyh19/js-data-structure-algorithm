@@ -63,18 +63,19 @@ console.log('8的二进制为：' + divideBy2(8))
 console.log('2的二进制为：' + divideBy2(2))
 console.log('20的二进制为：' + divideBy2(20))
 
+//转化成任何进制
 function baseConverter(decNumber, base) {
     var remStack = new Stack(),
         rem,
         baseString = '',
-        digits = '0123456789ABCDEF'; //{6}
+        digits = '0123456789ABCDEF';
     while (decNumber > 0) {
         rem = Math.floor(decNumber % base);
         remStack.push(rem);
         decNumber = Math.floor(decNumber / base);
     }
     while (!remStack.isEmpty()) {
-        baseString += digits[remStack.pop()]; //{7}
+        baseString += digits[remStack.pop()];
     }
     return baseString;
 }
