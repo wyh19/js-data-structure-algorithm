@@ -50,10 +50,12 @@ function LinkedList() {
                 head = current.next
             } else {
                 //循环至目标位置，期间不停更新current的上一项和current
-                while (index++ < position) {
-                    //此时current是上一次循环时的值,因此更新给previous，作为上一项
+                while (index < position) {
+                    //更新上一项，因为current下面会更新
                     previous = current
-                    //更新current 
+                    //更新index
+                    index++
+                    //更新current,保持current与index一致
                     current = current.next
                 }
                 //将previous与current的下一项链接起来:跳过current，从而移除它
