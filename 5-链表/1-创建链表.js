@@ -93,14 +93,34 @@ function LinkedList() {
         }
     }
     //返回元素在列表中的索引。如果列表中没有该元素则返回-1
-    this.remove = function (element) { }
+    this.remove = function (element) {
+        let index = this.indexOf(element)
+        return this.removeAt(index)
+    }
     //从列表的特定位置移除一项
-    this.indexOf = function (element) { }
+    this.indexOf = function (element) {
+        let current = head,
+            index = 0;
+        while (current) {
+            if (element === current.element) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        return -1;
+    }
     //如果链表中不包含任何元素，返回true，如果链表长度大于0则返回false
-    this.isEmpty = function () { }
+    this.isEmpty = function () {
+        return length === 0
+    }
     //返回链表包含的元素个数。与数组的length属性类似
-    this.size = function () { }
-    this.getHead = function () { }
+    this.size = function () {
+        return length
+    }
+    this.getHead = function () {
+        return head
+    }
     //由于列表项使用了Node类，就需要重写继承自JavaScript对象默认的toString方法，让其只输出元素的值。
     this.toString = function () {
         let current = head,
@@ -117,5 +137,6 @@ function LinkedList() {
 let n = new LinkedList()
 n.append(1)
 n.append(3)
-n.insert(1,2)
+n.insert(1, 2)
 console.log(n.toString())
+console.log(n.indexOf(1))
