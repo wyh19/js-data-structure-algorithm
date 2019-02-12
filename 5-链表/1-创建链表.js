@@ -39,7 +39,32 @@ function LinkedList() {
 
     }
     //从列表中移除一项
-    this.removeAt = function (position) { }
+    this.removeAt = function (position) {
+        //越界是否检查
+        if (position > -1 && position < length) {
+            let current = head,
+                previous,
+                index = 0
+            if (position === 0) {
+                //如果是第一项，直接将head变为原来的next
+                head = current.next
+            } else {
+                //循环至目标位置，期间不停更新current的上一项和current
+                while (index++ < position) {
+                    //此时current是上一次循环时的值,因此更新给previous，作为上一项
+                    previous = current
+                    //更新current 
+                    current = current.next
+                }
+                //将previous与current的下一项链接起来:跳过current，从而移除它
+                previous.next = current.next
+            }
+            length--;
+            return current.element;
+        } else {
+            return null
+        }
+    }
     //返回元素在列表中的索引。如果列表中没有该元素则返回-1
     this.remove = function (element) { }
     //从列表的特定位置移除一项
