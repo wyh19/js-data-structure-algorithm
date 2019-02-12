@@ -18,7 +18,21 @@ function LinkedList() {
 
     //向列表尾部添加一个新的项
     this.append = function (element) {
-
+        let node = new Node(element)
+        let current
+        if (head === null) {
+            //链表是空的，该项作为第一项
+            head = node
+        } else {
+            //从头开始
+            current = head
+            //找到最后一项
+            while (current.next) {
+                current = current.next;
+            }
+            current.next = node
+        }
+        length++
     }
     //向列表的特定位置插入一个新的项
     this.insert = function (position, element) {
