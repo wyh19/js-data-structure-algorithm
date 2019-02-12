@@ -46,7 +46,7 @@ function LinkedList() {
                 node.next = current
                 head = node
             } else {
-                 //循环至目标位置，期间不停更新current的上一项和current
+                //循环至目标位置，期间不停更新current的上一项和current
                 while (index < position) {
                     index++
                     previous = current
@@ -102,6 +102,20 @@ function LinkedList() {
     this.size = function () { }
     this.getHead = function () { }
     //由于列表项使用了Node类，就需要重写继承自JavaScript对象默认的toString方法，让其只输出元素的值。
-    this.toString = function () { }
+    this.toString = function () {
+        let current = head,
+            string = ''
+        while (current) {
+            string += current.element + (current.next ? '->' : '')
+            current = current.next
+        }
+        return string
+    }
     this.print = function () { }
 }
+//测试
+let n = new LinkedList()
+n.append(1)
+n.append(3)
+n.insert(1,2)
+console.log(n.toString())
