@@ -36,7 +36,32 @@ function LinkedList() {
     }
     //向列表的特定位置插入一个新的项
     this.insert = function (position, element) {
-
+        if (position > -1 && position < length) {
+            let node = new Node(element),
+                current = head,
+                previous,
+                index = 0
+            if (position === 0) {
+                //如果是头部插入，那么直接更新head
+                node.next = current
+                head = node
+            } else {
+                 //循环至目标位置，期间不停更新current的上一项和current
+                while (index < position) {
+                    index++
+                    previous = current
+                    current = current.next
+                }
+                //下一项为当前位置的
+                node.next = current
+                //指定上一项
+                previous.next = node
+            }
+            length++
+            return true
+        } else {
+            return false
+        }
     }
     //从列表中移除一项
     this.removeAt = function (position) {
